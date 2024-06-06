@@ -1,5 +1,4 @@
 ﻿using Raylib_cs;
-using System.Drawing;
 using System.Numerics;
 
 public class Program
