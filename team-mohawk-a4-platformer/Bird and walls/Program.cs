@@ -1,10 +1,20 @@
 ﻿namespace Bird_and_walls
 {
-    internal class Program
+    public class LazerWalls()
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello, World!");
-        }
+        int maxHeightTop = 0;
+        int maxHeightBottom = 600;
+
+    }
+
+    public class Birb()
+    {
+
+
+    }
+    public class RngLazerWalls()
+    {
+        
+
     }
 }

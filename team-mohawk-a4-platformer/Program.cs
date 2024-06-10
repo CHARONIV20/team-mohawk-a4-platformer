@@ -42,6 +42,8 @@ public class Program
 
     static void Update()
     {
+        LazerWall();
+
         // Your game code run each frame here
     }
 }
