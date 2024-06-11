@@ -1,5 +1,4 @@
 ﻿using Raylib_cs;
-using System.Drawing;
 using System.Numerics;
 
 public class Program
@@ -9,6 +8,8 @@ public class Program
     static int screenWidth = 800; // Screen width
     static int screenHeight = 600; // Screen height
     static int targetFps = 60; // Target frames-per-second
+
+    static Pipes? pipes;
 
     static void Main()
     {
@@ -37,10 +38,34 @@ public class Program
     static void Setup()
     {
         // Your one-time setup code here
+        pipes = new Pipes();
     }
 
     static void Update()
     {
         // Your game code run each frame here
+        pipes?.Draw();
+    }
+}
+
+public class Pipes
+{
+    private Rectangle topPipe;
+    private Rectangle bottomPipe;
+    private Color pipeColor;
+
+    public Pipes()
+    {
+        // Initialize the rectangles for the pipes
+        topPipe = new Rectangle(0, 0, 100, 150); // Top pipe
+        bottomPipe = new Rectangle(0, 450, 100, 150); // Bottom pipe
+        pipeColor = Color.Green; // Pipe color
+    }
+
+    public void Draw()
+    {
+        // Draw the top and bottom pipes
+        Raylib.DrawRectangleRec(topPipe, pipeColor);
+        Raylib.DrawRectangleRec(bottomPipe, pipeColor);
     }
 }
