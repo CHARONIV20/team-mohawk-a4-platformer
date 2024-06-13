@@ -15,12 +15,7 @@ public class Program
 
     static void Main()
     {
-        // Create a window to draw to. The arguments define width and height
-        Raylib.InitWindow(screenWidth, screenHeight, title);
-        // Set the target frames-per-second (FPS)
-        Raylib.SetTargetFPS(targetFps);
-        //
-
+        
         // Enable audio
         Raylib.InitAudioDevice();
         // Setup your game. This is a function YOU define.
@@ -41,35 +36,17 @@ public class Program
         Raylib.CloseWindow();
     }
 
-    static void Setup()
-    {
-        // Your one-time setup code here
-
-        // load sound here
-        sfx = Raylib.LoadSound("../../../SMACK Sound Effect.mp3");
+        static void Setup()
+        {
 
 
-    }
+            LoadSFX();
+        }
 
     static void Update()
     {
-
-
-        // Your game code run each frame here
-
-        // play sound here
-        if (Raylib.IsKeyPressed(KeyboardKey.Space))
-        {
-            Raylib.PlaySound(sfx);
-        }
-
+        LazerWall();
 
         // Your game code run each frame here
-    }
-
-
-    private static void LoadSFX()
-    {
-        sfx = new Sound();
     }
 }
