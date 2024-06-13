@@ -4,6 +4,14 @@ using System.Runtime.CompilerServices;
 
 public class Program
 {
+    // If you need variables in the Program class (outside functions), you must mark them as static
+    static string title = "Flappin Birb"; // Window title
+    static int screenWidth = 800; // Screen width
+    static int screenHeight = 600; // Screen height
+    static int targetFps = 60; // Target frames-per-second
+    static bool isMouseButtonPressed = Raylib.IsMouseButtonPressed(MouseButton.Left);
+    static bool isKeyPressed = Raylib.IsKeyPressed(KeyboardKey.Space);
+
  
 
     static Sound sfx;
@@ -33,26 +41,10 @@ public class Program
             LoadSFX();
         }
 
-        static void Update()
-        {
-            // Your game code run each frame here
+    static void Update()
+    {
+        LazerWall();
 
-
-            PlaySFX();
-        }
-
-        static void LoadSFX()
-        {
-            string path = "../../../../assets/audio/Mission Impossible Theme (Full Theme).mp3";
-            sfx = Raylib.LoadSound(path);
-        }
-
-        static void PlaySFX()
-        {
-            if (Raylib.IsKeyPressed(KeyboardKey.Space))
-            {
-                Raylib.PlaySound(sfx);
-            }
-        }
+        // Your game code run each frame here
     }
 }
