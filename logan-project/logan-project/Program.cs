@@ -57,8 +57,8 @@ public class Pipes
     public Pipes()
     {
         // Initialize the rectangles for the pipes
-        topPipe = new Rectangle(0, 0, 100, 150); // Top pipe
-        bottomPipe = new Rectangle(0, 450, 100, 150); // Bottom pipe
+        topPipe = new Rectangle((800 - 100) / 2, 0, 100, 150);
+        bottomPipe = new Rectangle((800 - 100) / 2, 450, 100, 150);
         pipeColor = Color.Green; // Pipe color
     }
 
