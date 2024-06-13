@@ -10,7 +10,6 @@ public class Program
     static int targetFps = 60; // Target frames-per-second
 
     static Pipes? pipes;
-    static Rectangle bird;
     static bool gameOver = false;
 
 
@@ -42,7 +41,6 @@ public class Program
     {
         // Your one-time setup code here
         pipes = new Pipes();
-        bird = new Rectangle(100, (screenHeight - 30) / 2, 30, 30); // Placeholder bird
 
     }
 
