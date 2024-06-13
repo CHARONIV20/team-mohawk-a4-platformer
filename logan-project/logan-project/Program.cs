@@ -56,9 +56,9 @@ public class Program
 
 public class Pipes
 {
-    private Rectangle topPipe;
-    private Rectangle bottomPipe;
-    private Color pipeColor;
+    public Rectangle topPipe;
+    public Rectangle bottomPipe;
+    public Color pipeColor;
 
     public Pipes()
     {
