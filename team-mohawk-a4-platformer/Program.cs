@@ -1,49 +1,75 @@
-﻿using Raylib_cs;
+﻿using System;
+using Raylib_cs;
 using System.Numerics;
+using flappy_berd_tester_tbh;
 
 public class Program
 {
-    // If you need variables in the Program class (outside functions), you must mark them as static
-    static string title = "Flappin Birb"; // Window title
-    static int screenWidth = 800; // Screen width
-    static int screenHeight = 600; // Screen height
-    static int targetFps = 60; // Target frames-per-second
-    static bool isMouseButtonPressed = Raylib.IsMouseButtonPressed(MouseButton.Left);
-    static bool isKeyPressed = Raylib.IsKeyPressed(KeyboardKey.Space);
+    // window and game variables
+    static string title = "Flappin Birb"; // window title
+    static int screenWidth = 800; // screen width
+    static int screenHeight = 600; // screen height
+    static int targetFps = 60; // target frames-per-second
+
+    // bird instance
+    static Class1 bird;
 
     static void Main()
     {
-        // Create a window to draw to. The arguments define width and height
+        // create a window to draw to
         Raylib.InitWindow(screenWidth, screenHeight, title);
-        // Set the target frames-per-second (FPS)
+        // set the target frames-per-second (FPS)
         Raylib.SetTargetFPS(targetFps);
-        // Setup your game. This is a function YOU define.
+        // setup your game
         Setup();
-        // Loop so long as window should not close
+
+        // game loop
         while (!Raylib.WindowShouldClose())
         {
-            // Enable drawing to the canvas (window)
+            // enable drawing to the canvas (window)
             Raylib.BeginDrawing();
-            // Clear the canvas with one color
+            // clear the canvas with one color
             Raylib.ClearBackground(Color.RayWhite);
-            // Your game code here. This is a function YOU define.
+            // update and draw your game
             Update();
-            // Stop drawing to the canvas, begin displaying the frame
+            // stop drawing to the canvas, begin displaying the frame
             Raylib.EndDrawing();
         }
-        // Close the window
+
+        // close the window
         Raylib.CloseWindow();
     }
 
     static void Setup()
     {
-        // Your one-time setup code here
+        // initialize the bird instance
+        bird = new Class1(new Vector2(100, 300), new Vector2(0, 75));
     }
 
     static void Update()
     {
-        LazerWall();
+        // bird flap input
+        if (Raylib.IsKeyPressed(KeyboardKey.Space))
+        {
+            // applies a certain amount of force if the designated key is pressed
+            bird.ApplyFlap(new Vector2(0, -15));
+        }
 
-        // Your game code run each frame here
+        // simulate gravity
+        bird.SimulateGravity(Raylib.GetFrameTime());
+
+        // check if the bird hits the ground or ceiling
+        bird.CheckBounds(25, 575);
+
+        // draw everything in the game
+        Draw();
+    }
+
+    static void Draw()
+    {
+        // draw everything in the game
+        Raylib.DrawText("Press SPACE to jump", 10, 10, 20, Color.DarkGray);
+        Raylib.DrawText("(game instantly closes if you touch the ceiling/ground)", 10, 30, 20, Color.DarkGray);
+        bird.Draw();
     }
 }
