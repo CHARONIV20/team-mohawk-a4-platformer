@@ -43,7 +43,7 @@ public class Program
 
         static void LoadSFX()
         {
-            string path = "../../../../assets/audio/target.ogg";
+            string path = "../../../../assets/audio/Mission Impossible Theme (Full Theme).mp3";
             sfx = Raylib.LoadSound(path);
         }
 
