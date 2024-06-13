@@ -46,15 +46,15 @@ public class Program
         // Your one-time setup code here
 
         // load sound here
-        sfx = Raylib.LoadSound("../../../SMACK Sound Effect.mp3"); 
-        
+        sfx = Raylib.LoadSound("../../../SMACK Sound Effect.mp3");
+
 
     }
 
-        static void Update()
-        {
     static void Update()
     {
+
+
         // Your game code run each frame here
 
         // play sound here
@@ -64,9 +64,9 @@ public class Program
         }
 
 
-            // Your game code run each frame here
-        }
+        // Your game code run each frame here
     }
+
 
     private static void LoadSFX()
     {
