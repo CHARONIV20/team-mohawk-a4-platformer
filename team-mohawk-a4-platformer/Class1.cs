@@ -1,7 +1,7 @@
 ﻿using System.Numerics;
 using Raylib_cs;
 
-namespace flappy_berd_tester_tbh
+namespace team_mohawk_a4_platformer
 {
     internal class Class1
     {
