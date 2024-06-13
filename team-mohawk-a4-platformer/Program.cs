@@ -1,4 +1,5 @@
 ﻿using Raylib_cs;
+using System.IO.Pipes;
 using System.Numerics;
 
 public class Program
@@ -10,6 +11,8 @@ public class Program
     static int targetFps = 60; // Target frames-per-second
     static bool isMouseButtonPressed = Raylib.IsMouseButtonPressed(MouseButton.Left);
     static bool isKeyPressed = Raylib.IsKeyPressed(KeyboardKey.Space);
+    static int speedX = -200;
+    Vector2 pos;
 
     static void Main()
     {
@@ -37,13 +40,19 @@ public class Program
 
     static void Setup()
     {
+       pipe = new pipe();
         // Your one-time setup code here
     }
 
     static void Update()
     {
-        LazerWall();
-
+        pipe.UpdatePipeSpeed();
         // Your game code run each frame here
     }
+
+    public void UpdatePipeSpeed()
+    {
+        pos.X = speedX * Raylib.GetFrameTime();
+    }
+
 }
