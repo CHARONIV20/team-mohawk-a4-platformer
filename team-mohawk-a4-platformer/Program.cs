@@ -12,13 +12,13 @@ public class Program
     static bool isMouseButtonPressed = Raylib.IsMouseButtonPressed(MouseButton.Left);
     static bool isKeyPressed = Raylib.IsKeyPressed(KeyboardKey.Space);
 
- 
+
 
     static Sound sfx;
 
     static void Main()
     {
-        
+
         // Enable audio
         Raylib.InitAudioDevice();
         // Setup your game. This is a function YOU define.
@@ -41,10 +41,16 @@ public class Program
             LoadSFX();
         }
 
-    static void Update()
-    {
-        LazerWall();
+        static void Update()
+        {
 
-        // Your game code run each frame here
+
+            // Your game code run each frame here
+        }
+    }
+
+    private static void LoadSFX()
+    {
+        sfx = new Sound();
     }
 }
