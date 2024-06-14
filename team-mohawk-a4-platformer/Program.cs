@@ -1,4 +1,6 @@
 ﻿using Raylib_cs;
+
+using Raylib_cs;
 using System.Numerics;
 
 public class Program
@@ -15,7 +17,7 @@ public class Program
 
     static void Main()
     {
-        
+
         // Enable audio
         Raylib.InitAudioDevice();
         // Setup your game. This is a function YOU define.
@@ -32,20 +34,19 @@ public class Program
             // Stop drawing to the canvas, begin displaying the frame
             Raylib.EndDrawing();
         }
-        // Close the window
-        Raylib.CloseWindow();
+        
     }
 
-        static void Setup()
-        {
+    static void Setup()
+    {
 
 
-            LoadSFX();
-        }
+       
+    }
 
     static void Update()
     {
-        LazerWall();
+       
 
         // Your game code run each frame here
     }
