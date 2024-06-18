@@ -1,6 +1,7 @@
 ﻿using Raylib_cs;
 using System.Numerics;
 
+
 public class Program
 {
     // If you need variables in the Program class (outside functions), you must mark them as static
